@@ -60,9 +60,13 @@ class InfoViewController: UIViewController {
     func configureTitle() {
         let mediaDict = player.media?.metaDictionary
         if let title = mediaDict?[VLCMetaInformationTitle] as? String {
-           titleLabel.text = title
+            titleLabel.text = title
+//            titleLabel.numberOfLines = 0
+            titleLabel.lineBreakMode = NSLineBreakMode.byCharWrapping
         } else {
-           titleLabel.text = player.media?.url.absoluteString
+            titleLabel.text = player.media?.url.absoluteString
+//            titleLabel.numberOfLines = 0
+            titleLabel.lineBreakMode = NSLineBreakMode.byCharWrapping
         }
     }
 

@@ -55,7 +55,7 @@ class SlideUpAnimatedTransitioner: NSObject, UIViewControllerAnimatedTransitioni
                        delay: 0.0, usingSpringWithDamping: 1.0,
                        initialSpringVelocity: 0.0,
                        options: .allowUserInteraction,
-                       animations: { secondVCView.frame.origin.y = -secondVC.preferredContentSize.height  },
+                       animations: { secondVCView.frame.origin.y = -secondVC.preferredContentSize.height - 60  },
                        completion: { _ in
                         secondVCView.removeFromSuperview()
                         transitionContext.completeTransition(!transitionContext.transitionWasCancelled)})

@@ -17,6 +17,8 @@ struct TestTVVLCPlayerController: UIViewControllerRepresentable {
         let player = VLCMediaPlayer()
         let media: VLCMedia = VLCMedia(url: URL(string: "https://upload.wikimedia.org/wikipedia/commons/8/88/Big_Buck_Bunny_alt.webm")!)
         media.addOption(":http-user-agent=AppleCoreMedia/1.0.0.18L191 (Apple TV; U; CPU OS 14_5 like Mac OS X; zh_cn)")
+//        player.addPlaybackSlave(URL(string: "http://raw.githubusercontent.com/chinanf-boy/translate-srt/master/test.zh.srt")!, type: .subtitle, enforce: true)
+        player.addPlaybackSlave(URL(string: "http://raw.githubusercontent.com/chinanf-boy/translate-srt/master/test.zh.srt"), type: .subtitle, enforce: true)
         player.media = media
         let playerViewController = VLCPlayerViewController.instantiate(player: player)
         return playerViewController
@@ -25,7 +27,7 @@ struct TestTVVLCPlayerController: UIViewControllerRepresentable {
     }
 }
 
-struct TestPlayerView: View {    
+struct TestPlayerView: View {
     var body: some View {
         TestTVVLCPlayerController()
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)

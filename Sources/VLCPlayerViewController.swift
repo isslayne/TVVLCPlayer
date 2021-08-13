@@ -42,6 +42,8 @@ public class VLCPlayerViewController: UIViewController {
     @IBOutlet var actionGesture: LongPressGestureRecogniser!
     @IBOutlet var playPauseGesture: UITapGestureRecognizer!
     @IBOutlet var cancelGesture: UITapGestureRecognizer!
+    @IBOutlet var jumpForwardGesture: UITapGestureRecognizer!
+    @IBOutlet var jumpBackwardGesture: UITapGestureRecognizer!
 
     @IBOutlet var scrubbingPositionController: ScrubbingPositionController!
     @IBOutlet var remoteActionPositionController: RemoteActionPositionController!
@@ -208,6 +210,13 @@ public class VLCPlayerViewController: UIViewController {
         player.play()
         hideControl()
     }
+    @IBAction func jumpForward(_ sender: Any) {
+        player.shortJumpForward()
+    }
+    @IBAction func jumpBackward(_ sender: Any) {
+        player.shortJumpBackward()
+    }
+    
 }
 
 // MARK: - Update views
