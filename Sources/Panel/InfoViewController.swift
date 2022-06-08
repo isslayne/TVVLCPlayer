@@ -98,7 +98,7 @@ class InfoViewController: UIViewController {
 
     func configureDescription() {
         let mediaDict = player.media?.metaDictionary
-        let texts = [VLCMetaInformationDescription, VLCMetaInformationCopyright].compactMap { mediaDict[$0] as? String  }
+        let texts = [VLCMetaInformationDescription, VLCMetaInformationCopyright].compactMap { mediaDict?[$0] as? String  }
 
         textView.text = texts.joined(separator: "\n")
         textView.textContainerInset = UIEdgeInsets.zero

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F49AF1528510B6A000C1002 /* TVVLCKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7C0FC026BBE6B600C20306 /* TVVLCKit.xcframework */; };
+		2F49AF1628510B6A000C1002 /* TVVLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD7C0FC026BBE6B600C20306 /* TVVLCKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F1C59D621D91F1C00F5D8D3 /* VLCMediaPlayer+Equalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C59D521D91F1C00F5D8D3 /* VLCMediaPlayer+Equalizer.swift */; };
 		3F1C59D821D91F2400F5D8D3 /* VLCMediaPlayer+Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C59D721D91F2400F5D8D3 /* VLCMediaPlayer+Delay.swift */; };
 		3F1C59DA21D91F4400F5D8D3 /* VLCMediaPlayer+indexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C59D921D91F4400F5D8D3 /* VLCMediaPlayer+indexed.swift */; };
@@ -76,6 +78,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2F49AF1728510B6A000C1002 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2F49AF1628510B6A000C1002 /* TVVLCKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD7C0FC326BBE6B600C20306 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +168,7 @@
 			files = (
 				3F7CC77421D698C20094B074 /* AudioToolbox.framework in Frameworks */,
 				3F7CC77021D698320094B074 /* AVFoundation.framework in Frameworks */,
+				2F49AF1528510B6A000C1002 /* TVVLCKit.xcframework in Frameworks */,
 				3F7CC77221D6985C0094B074 /* VideoToolbox.framework in Frameworks */,
 				3F7CC77C21D698E10094B074 /* CoreMedia.framework in Frameworks */,
 				3F8FF71121D6438C00A86CDF /* Foundation.framework in Frameworks */,
@@ -374,6 +388,7 @@
 				3F19D41C21288C4C009E68AF /* Frameworks */,
 				3F19D41D21288C4C009E68AF /* Resources */,
 				3F3BCAC321D6E92300BE40EC /* ShellScript */,
+				2F49AF1728510B6A000C1002 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -716,7 +731,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9DQT98LJ77;
+				DEVELOPMENT_TEAM = JX5FCN8888;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -746,7 +761,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9DQT98LJ77;
+				DEVELOPMENT_TEAM = JX5FCN8888;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

@@ -12,8 +12,8 @@ import TVVLCKit
 /// Indexed
 struct IndexedCollection: SelectableCollection {
     let player: VLCMediaPlayer
-    let indexesKeyPath: KeyPath<VLCMediaPlayer, [Any]?>
-    let namesKeyPath: KeyPath<VLCMediaPlayer, [Any]?>
+    let indexesKeyPath: KeyPath<VLCMediaPlayer, [Any]>
+    let namesKeyPath: KeyPath<VLCMediaPlayer, [Any]>
     let curentIndexKeyPath: ReferenceWritableKeyPath<VLCMediaPlayer, Int32>
     var hideDisableTrack: Bool = false
 
@@ -24,7 +24,7 @@ struct IndexedCollection: SelectableCollection {
     var selectedIndex: Int? {
         set {
             if let selectedIndex = newValue {
-                player[keyPath: curentIndexKeyPath] = player[keyPath: indexesKeyPath]?[selectedIndex + offset] as? Int32 ?? 0
+                player[keyPath: curentIndexKeyPath] = player[keyPath: indexesKeyPath][selectedIndex + offset] as? Int32 ?? 0
             } else {
                 player[keyPath: curentIndexKeyPath] = -1
             }
@@ -42,31 +42,32 @@ struct IndexedCollection: SelectableCollection {
     }
 
     var count: Int {
-        guard let count = player[keyPath: indexesKeyPath]?.count else {
+        let count = player[keyPath: indexesKeyPath].count
+        guard count >= 0 else {
             return 0
         }
         return count - offset
     }
 
     subscript(position: Int) -> String {
-        return player[keyPath: namesKeyPath]?[position + offset] as? String ?? "none"
+        return player[keyPath: namesKeyPath][position + offset] as? String ?? "none"
     }
 }
 
 extension VLCMediaPlayer {
     var audioTracks: IndexedCollection {
         return IndexedCollection(player: self,
-                                 indexesKeyPath: \VLCMediaPlayer.audioTrackIndexes?,
-                                 namesKeyPath: \VLCMediaPlayer.audioTrackNames?,
-                                 curentIndexKeyPath: \VLCMediaPlayer.currentAudioTrackIndex?,
+                                 indexesKeyPath: \VLCMediaPlayer.audioTrackIndexes,
+                                 namesKeyPath: \VLCMediaPlayer.audioTrackNames,
+                                 curentIndexKeyPath: \VLCMediaPlayer.currentAudioTrackIndex,
                                  hideDisableTrack: true)
     }
 
     var videoSubtitles: IndexedCollection {
         return IndexedCollection(player: self,
-                                 indexesKeyPath: \VLCMediaPlayer.videoSubTitlesIndexes?,
-                                 namesKeyPath: \VLCMediaPlayer.videoSubTitlesNames?,
-                                 curentIndexKeyPath: \VLCMediaPlayer.currentVideoSubTitleIndex?,
+                                 indexesKeyPath: \VLCMediaPlayer.videoSubTitlesIndexes,
+                                 namesKeyPath: \VLCMediaPlayer.videoSubTitlesNames,
+                                 curentIndexKeyPath: \VLCMediaPlayer.currentVideoSubTitleIndex,
                                  hideDisableTrack: false)
     }
 }
