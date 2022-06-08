@@ -56,17 +56,17 @@ struct IndexedCollection: SelectableCollection {
 extension VLCMediaPlayer {
     var audioTracks: IndexedCollection {
         return IndexedCollection(player: self,
-                                 indexesKeyPath: \VLCMediaPlayer?.audioTrackIndexes,
-                                 namesKeyPath: \VLCMediaPlayer?.audioTrackNames,
-                                 curentIndexKeyPath: \VLCMediaPlayer?.currentAudioTrackIndex,
+                                 indexesKeyPath: \VLCMediaPlayer.audioTrackIndexes?,
+                                 namesKeyPath: \VLCMediaPlayer.audioTrackNames?,
+                                 curentIndexKeyPath: \VLCMediaPlayer.currentAudioTrackIndex?,
                                  hideDisableTrack: true)
     }
 
     var videoSubtitles: IndexedCollection {
         return IndexedCollection(player: self,
-                                 indexesKeyPath: \VLCMediaPlayer?.videoSubTitlesIndexes,
-                                 namesKeyPath: \VLCMediaPlayer?.videoSubTitlesNames,
-                                 curentIndexKeyPath: \VLCMediaPlayer?.currentVideoSubTitleIndex,
+                                 indexesKeyPath: \VLCMediaPlayer.videoSubTitlesIndexes?,
+                                 namesKeyPath: \VLCMediaPlayer.videoSubTitlesNames?,
+                                 curentIndexKeyPath: \VLCMediaPlayer.currentVideoSubTitleIndex?,
                                  hideDisableTrack: false)
     }
 }

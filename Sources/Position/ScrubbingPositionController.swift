@@ -78,7 +78,7 @@ class ScrubbingPositionController: NSObject, PositionController {
 
         switch sender.state {
         case .cancelled:
-            selectedTime = player?.time
+            selectedTime = player.time??0
             fallthrough
         case .ended:
             let velocity = sender.velocity(in: nil)
