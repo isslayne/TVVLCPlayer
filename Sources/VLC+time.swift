@@ -10,8 +10,8 @@ import Foundation
 import TVVLCKit
 
 extension VLCMediaPlayer {
-    var totalTime: VLCTime? {
-        return time - remainingTime
+    var totalTime: VLCTime! {
+        return time - remainingTime!
     }
 }
 
